@@ -8,6 +8,7 @@
 		<h1>MIRAGE-VUE</h1>
     </v-app-bar>
 		<v-content>
+			{{myStr|doSomething}}
 			<v-container>
 				<div class="d-flex align-center">
 				<v-layout wrap row>
@@ -39,7 +40,7 @@
 							class="elevation-1"
 						>
 							<template v-slot:items="props">
-								<td>{{ props.item.firstName }}</td>
+								<td>{{ props.item.firstName}}</td>
 								<td class="text-xs-right">{{ props.item.lastName }}</td>
 							</template>
 						</v-data-table>
@@ -53,15 +54,22 @@
 
 <script>
 import axios from "axios"
+import voca from "voca"
 
 export default {
   name: 'App',
+  filters:{
+		doSomething(val){
+			return voca.camelCase(val)
+		}
+	},
 	data () {
       return {
-				profile:{
-					firstName:'',
-					lastName:''
-				},
+		myStr:'fuck you',
+		profile:{
+			firstName:'',
+			lastName:''
+		},
         headers: [
           {
             text: 'FirstName',
