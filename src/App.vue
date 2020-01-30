@@ -32,21 +32,21 @@
 							</v-flex>
 						</v-layout>
 						<v-btn @click="createProfile">save</v-btn>
-        </v-flex>
-				<v-flex xs6 pl-5>
-						<v-data-table
-							:headers="headers"
-							:items="items"
-							class="elevation-1"
-						>
-							<template v-slot:items="props">
-								<td>{{ props.item.firstName}}</td>
-								<td class="text-xs-right">{{ props.item.lastName }}</td>
-							</template>
-						</v-data-table>
-				</v-flex>
+					</v-flex>
+					<v-flex xs6 pl-5>
+							<v-data-table
+								:headers="headers"
+								:items="items"
+								class="elevation-1"
+							>
+								<template v-slot:items="props">
+									<td>{{ props.item.firstName}}</td>
+									<td class="text-xs-right">{{ props.item.lastName }}</td>
+								</template>
+							</v-data-table>
+					</v-flex>
 				</v-layout>
-      </div>
+				</div>
 			</v-container>
 		</v-content>
   </v-app>
